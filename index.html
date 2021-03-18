@@ -1,32 +1,238 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="normalize.css" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet"  href="https://unpkg.com/flexboxgrid2@7.2.1/flexboxgrid2.min.css"/>
+<html lang="ru">
 
-    <title>Uber Eats - Главная страница</title>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles/modal.css" />
+  <link rel="stylesheet" href="styles/normalize.css" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/flexboxgrid2@7.2.1/flexboxgrid2.min.css" />
 
-  <body>
-    
-    <header>
-      <div class = "container">
-        <nav class = "nav">
-          <div class = "logo">
-            <a href = "#"><img src="img/logo.svg" alt="logo"/></a>
+  <title>Uber Eats - Главная страница</title>
+</head>
+
+<body>
+  <!-- header -->
+
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <div class="logo">
+          <a href="#"><img src="img/logo.svg" alt="logo" /></a>
+        </div>
+        <div class="log">
+          <a href="#"><button id='open-modal-in'>Войти</button></a>
+          <a href='#'><button id="open-modal-reg">Регистрация</button></a>
+          <a href="#"><img src="img/basket.svg" alt="basket" /></a>
+        </div>
+      </nav>
+    </div>
+    <!-- Регистрация -->
+    <div id="modal-registration" class="modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+
+          <div class='modal-sign-up'>
+            <div class="modal-header">
+              <h3 class="modal-title">Регистрация</h3>
+              <span class ='close' onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+              <div class="modal-form">
+                <div id="email">
+                  <p>Адрес электронной почты</p>
+                  <input type="email" placeholder="example@.com" name="mail">
+                </div>
+                <div id="password">
+                  <p>Пароль</p>
+                  <input type="password" name="password">
+                </div>
+                <div id="password-second">
+                  <p>Введите пароль ещё раз</p>
+                  <input type="password" name="password-second">
+                </div>
+                <div id="sign-up">
+                  <input type="button" name="sign-up" value="Регистрация">
+                </div>
+              </div>
+            </div>
           </div>
-          <div class = "log">
-            <a href ="#"><img src = "img/basket.png" alt = "basket"/></a>
+
+        <div class="modal-sign-in">
+          <div class="modal-header">
+            <h3 class="modal-title">Вход</h3>
+            <span class="close" onclick="closeModal()">&times;</span>
           </div>
-        </nav>
-    </header>
+          <div class="modal-body">
+            <div class="modal-form">
+              <div id="email">
+                <p>Адрес электронной почты</p>
+                <input type="email" placeholder="example@.com" name="mail">
+              </div>
+              <div id="password">
+                <p>Пароль</p>
+                <input type="password" name="password">
+              </div>
+              
+              <div id="sign-in">
+                <input type="button" name="sign-up" value="Вход">
+              </div>
+            </div>
+          </div>
+        </div>
 
 
+        </div>
+      </div>
+    </div>
 
+  </header>
 
+  <main>
+    <!-- search -->
 
-  </body>
+    <div class="search container">
+      <input type="search" name="search" id="search" placeholder="Поиск по ресторанам и кухням" />
+    </div>
+
+    <!-- cards -->
+
+    <section class="container">
+      <p class="head">Рестораны в Москве</p>
+      <div class="row">
+        <div class="card col-xs-12 col-md-6 col-lg-4">
+          <div class="card-content">
+            <a href="pushkin.html"><img src="img/mac.png" alt="food" /></a>
+            <p class="card-name"><a href="pushkin.html">Макдоналдс — Газетный</a></p>
+            <p class="card-type">₽₽ • Бургеры</p>
+            <p class="card-time">25 - 35 мин</p>
+          </div>
+        </div>
+        <div class="card col-xs-12 col-md-6 col-lg-4">
+          <div class="card-content">
+            <a href="pushkin.html"><img src="img/1-2.png" alt="food" /></a>
+            <p class="card-name"><a href="pushkin.html">DimSum & Co — ЦДМ</a></p>
+            <p class="card-type">₽ • Японская • Китайская • Азиатская</p>
+            <p class="card-time">40 - 50 мин</p>
+          </div>
+        </div>
+        <div class="card col-xs-12 col-md-6 col-lg-4">
+          <div class="card-content">
+            <a href="pushkin.html"><img src="img/1-3.png" alt="food" /></a>
+            <p class="card-name"><a href="pushkin.html">ДвижОК — Манежная</a></p>
+            <p class="card-type">₽ • Американская • Европейская</p>
+            <p class="card-time">35 - 45 мин</p>
+          </div>
+        </div>
+        <div class="card col-xs-12 col-md-6 col-lg-4">
+          <div class="card-content">
+            <a href="pushkin.html"><img src="img/1-5.png" alt="food" /></a>
+            <p class="card-name"><a href="pushkin.html">НЯ — NHA</a></p>
+            <p class="card-type">₽₽ • Вьетнамская</p>
+            <p class="card-time">30 - 40 мин</p>
+          </div>
+        </div>
+        <div class="card col-xs-12 col-md-6 col-lg-4">
+          <div class="card-content">
+            <a href="pushkin.html"><img src="img/1-6.png" alt="food" /></a>
+            <p class="card-name"><a href="pushkin.html">Точка Дзы — Цветной</a></p>
+            <p class="card-type">₽₽ • Вьетнамская</p>
+            <p class="card-time">40 - 50 мин</p>
+          </div>
+        </div>
+        <div class="card col-xs-12 col-md-6 col-lg-4">
+          <div class="card-content">
+            <a href="pushkin.html"><img src="img/1-7.png" alt="food" /></a>
+            <p class="card-name"><a href="pushkin.html">Cinnabon</a></p>
+            <p class="card-type">₽ • Выпечка • Десерты • Капкейки</p>
+            <p class="card-time">25 - 35 мин</p>
+          </div>
+        </div>
+        <div class="card col-xs-12 col-md-6 col-lg-4">
+          <div class="card-content">
+            <a href="pushkin.html"><img src="img/1-8.png" alt="food" /></a>
+            <p class="card-name"><a href="pushkin.html">PIZZELOVE</a></p>
+            <p class="card-type">₽₽ • Пицца</p>
+            <p class="card-time">15 - 25 мин</p>
+          </div>
+        </div>
+        <div class="card col-xs-12 col-md-6 col-lg-4">
+          <div class="card-content">
+            <a href="pushkin.html"><img src="img/1.png" alt="food" /></a>
+            <p class="card-name">Zю кафе — Тверская<a href="pushkin.html"></a></p>
+            <p class="card-type">₽₽ • Японская</p>
+            <p class="card-time">25 - 35 мин</p>
+          </div>
+        </div>
+        <div class="card col-xs-12 col-md-6 col-lg-4">
+          <div class="card-content">
+            <a href="pushkin.html"><img src="img/1-3.png" alt="food" /></a>
+            <p class="card-name"><a href="pushkin.html">Bar BQ Cafe — Манежная</a></p>
+            <p class="card-type">₽₽₽ • Европейская</p>
+            <p class="card-time">30 - 40 мин</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- footer -->
+
+  <footer>
+    <div class="container">
+      <div class="logo-footer">
+        <a href="#"><img src="img/white-logo.svg" alt="logo" /></a>
+      </div>
+      <nav class="footer row">
+        <div class="col-lg-4 col-md-4 col-xs-12">
+          <div class="lang">
+            <select name="lang" id="lang">
+              <option value="ru">Русский</option>
+              <option value="en">English</option>
+              <option value="kz">Казахский</option>
+              <option value="ua">Украинский</option>
+            </select>
+          </div>
+          <div class="hash"><span class="hashtag">#</span> UberEats</div>
+          <div class="social">
+            <a href="#"><img src="img/facebook.svg" alt="fb" /></a>
+            <a href="#"><img src="img/twitter.svg" alt="tw" /></a>
+            <a href="#"><img src="img/instagram.svg" alt="inst" /></a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-xs-12">
+          <p><a href="#">Об UberEats</a></p>
+          <p><a href="#">Станьте партнёром по доставке</a></p>
+          <p><a href="#">Станьте парнёром-рестораном</a></p>
+        </div>
+        <div class="col-lg-4 col-md-4 col-xs-12">
+          <p><a href="#">Все города</a></p>
+          <p><a href="#">Цены</a></p>
+          <p><a href="#">Помощь</a></p>
+          <p><a href="#">FAQs</a></p>
+        </div>
+      </nav>
+      <div class="download">
+        <a href="#"><img src="img/apple.png" alt="apple" /></a>
+        <a href="#"><img src="img/google.png" alt="google" /></a>
+      </div>
+      <div class="footer-bottom row">
+        <div class="col-lg-4 col-md-4 col-xs-12">
+          © 2017 Uber Technologies Inc. Сделано mihanik21
+        </div>
+        <div class="col-lg-4 col-md-4 col-xs-12">
+          <a href="#">Обработка персональных данных</a>
+        </div>
+        <div class="col-lg-4 col-md-4 col-xs-12">
+          <a href="#">Пользовательское соглашение</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <a href="#"><img class="butnup" src="img/btn-up.svg" alt="btn-up"></a>
+</body>
+<script src="scripts/modal.js"></script>
+
 </html>
